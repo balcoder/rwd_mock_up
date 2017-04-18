@@ -15,3 +15,8 @@ gulp.task('css', function(){
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('dist/css'))
 });
+gulp.task('images', function(){
+  return gulp.src('src/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'))
+})
