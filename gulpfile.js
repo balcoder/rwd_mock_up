@@ -14,9 +14,29 @@ gulp.task('css', function(){
     }))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('dist/css'))
+    .pipe(browsersync.stream())
 });
 gulp.task('images', function(){
   return gulp.src('src/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/images'))
-})
+});
+
+gulp.task('copy', function(){
+  return gulp.src('src/*.html')
+    .pipe(gulp.dest('dist'))
+    .pipe(browsersync.stream())
+});
+
+gulp.task('browsersync', function(){
+  browsersync.init({
+    server: {
+      baseDir: 'dist'
+    }
+  })
+});
+
+gulp.task('watch', ['browsersync','css'], function(){
+  gulp.watch('src/sass/**/*.scss', ['css']);
+  gulp.watch('src/*.html', ['copy']);
+});
