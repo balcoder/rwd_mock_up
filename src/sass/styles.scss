@@ -1,6 +1,32 @@
-body {
-  font-size: 1em;
-  background-color: pink;
-  color: white;
-  
-}
+//
+//--Main SCSS file
+//
+
+// load config
+@import 'config/config';
+
+// load mixins
+@import 'mixins/mixins_general';
+@import 'mixins/mixin_breakpoints';
+@import 'mixins/mixins_grids';
+
+// load base
+
+@import 'base/helper_classes';
+@import 'base/reset';
+@import 'base/typography';
+
+// load structure
+@import 'structure/header';
+@import 'structure/footer';
+@import 'structure/sections';
+
+// load modules
+@import 'modules/grids';
+
+// load pages
+@import 'pages/welcome';
+@import 'pages/services';
+@import 'pages/portfolio';
+@import 'pages/blog';
+@import 'pages/contact';

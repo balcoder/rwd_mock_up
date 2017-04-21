@@ -1,0 +1,34 @@
+// set boz-sizing to border-box for everything
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+// remove margins and paddings from everything
+*{
+  margin: 0;
+  padding: 0;
+}
+
+//set all headings to normal font weight
+h1, h2, h3, h4, h5, h6 {
+  font-size: normal;
+}
+
+//remove list style from ul's
+ul {
+  list-style: none;
+}
+
+//set media elements to max width 100% for responsiveness
+img, video, embed, object {
+  max-width: 100%;
+}
+
+//set images to vert allign middle to avoid white space below them
+img {
+  vertical-align: middle;
+}
+
+label, button {
+  cursor: pointer;
+}
